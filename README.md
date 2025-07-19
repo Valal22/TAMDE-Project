@@ -1,15 +1,14 @@
-
 # Project: Theory and Applications of Model-Driven Engineering
 
 This project of Theory and Applications of Model-Driven Engineering (TAMDE) presents five case studies where the primary goal is to define source and target metamodels, create model instances, and execute model-to-model (M2M) transformations using the Epsilon Transformation Language (ETL). The project also involves model slicing and visualization using Picto. This document provides a detailed explanation the case studies and a generalized step-by-step tutorial for setting up the environment and running the transformations in Eclipse.
 
 
-
-## First Case Study: Farmers to Market Transformation 
+# Case studies
+### First Case Study: Farmers to Market Transformation 
 
 This case study focuses on transforming a detailed model of farmers and their produce into a simplified model representing products available at a market.
 
-### The Metamodels
+#### The Metamodels
 
 Two distinct metamodels are defined for this transformation, representing the source and target structures.
 
@@ -22,10 +21,31 @@ Two distinct metamodels are defined for this transformation, representing the so
     * `Market`: The root container for all product selections.
     * `Selection`: Represents a single product line for sale, containing its `name`, `quality`, `price`, `amount`, and the `farmer_id` of the producer.
 
-### Transformation Goal
+#### Transformation Goal
 
 The transformation, defined in `farmer2market.etl`, reads an instance model conforming to `farmers.ecore` (i.e., a list of farmers and their fruits) and produces a new instance model conforming to `market.ecore`. The logic iterates through each farmer and each of their fruits, creating a corresponding `Selection` entry in the market model for every fruit.
 
+
+### Second Case Study: Customer to Data Warehouse Transformation 📈
+
+This case study focuses on transforming a transactional model of customer purchases into an aggregated, analytical model suitable for a data warehouse.
+
+#### The Metamodels
+
+Two distinct metamodels are defined, representing the raw transactional data and the summarized analytical data.
+
+* **Source Metamodel (A): `customer.ecore`**. This metamodel captures detailed information about individual customers and their specific purchase histories.
+    * `CustomerModel`: The root container for all customers.
+    * `Customer`: Represents a customer with a `customer_id`, `name`, `email`, `age`, and a list of their purchases.
+    * `Purchase`: Represents a single transaction with a `product` name, `quantity`, `price`, and `date`.
+
+* **Target Metamodel (B): `warehouse.ecore`**. This metamodel provides an aggregated, analytical view. It summarizes each customer's activity into a single "fact" record.
+    * `DataWarehouse`: The root container for all customer facts.
+    * `CustomerFact`: Represents a summarized view of a customer, containing their `customer_id`, `name`, `email`, along with calculated fields like `total_spent`, `total_orders`, and the `last_purchase_date`.
+
+#### Transformation Goal
+
+The transformation, defined in `customer2warehouse.etl`, reads an instance model conforming to `customer.ecore` and produces a new instance model conforming to `warehouse.ecore`. The logic iterates through each customer and aggregates their purchase history by calculating the total money spent, counting the number of orders, and identifying the most recent purchase date. This creates a concise, analytical summary for each customer.
 
 ## Step-by-Step MDE Tutorial 
 
