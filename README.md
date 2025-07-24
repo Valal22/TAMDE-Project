@@ -107,6 +107,9 @@ Here, we define the transformation logic and configure the execution environment
 
 6.  **Run the Transformation**: Click `Ok` (for both files of 4. and 5. points) and then `Run`. The transformation will execute, and the new output `.xmi` file should appear in the `models` folder.
 
+7.  **Generate a `.model` file**: Copy-paste the newly generated `.xmi` file but this time change in `.model` (e.g. `market.model`) 
+
+
 ### 4. Visualizing Metamodels with Picto
 
 Picto can be used to generate class diagrams from the `.ecore` metamodels. [Here](https://github.com/alfonsodelavega/picto-objectdiagram) you can go through the installation tutorial for picto (it should be read before continuing). 
