@@ -1,0 +1,34 @@
+pre {"Transformation starting".println();}
+
+rule CustomerModelToDataWarehouse
+transform cm : customer!CustomerModel
+to dw : warehouse!DataWarehouse {
+
+    for (cust in cm.customers) {
+        
+        var fact = new warehouse!CustomerFact;
+        
+        fact.customer_id = cust.customer_id;
+        fact.name = cust.name;
+        fact.email = cust.email;
+        
+        /* Aggregate information using temporary variables */
+        var totalSpent = 0.0;
+        var mostRecentDate = "";
+        
+        for (purchase in cust.purchases) {
+            totalSpent = totalSpent + (purchase.price * purchase.quantity);
+            if (mostRecentDate == "" or purchase.date > mostRecentDate) {
+                mostRecentDate = purchase.date;
+            }
+        }
+        
+        fact.total_orders = cust.purchases.size();
+        fact.total_spent = totalSpent;
+        fact.last_purchase_date = mostRecentDate;
+        
+        dw.customerFacts.add(fact);
+    }
+}
+
+post {"Transformation finished".println();}
