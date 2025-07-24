@@ -1,0 +1,24 @@
+pre {"Transformation starting".println();}
+
+rule FarmModelToMarket
+transform fm : farmers!FarmModel
+to m : market!Market {
+    //fm.farmers.println();
+    for (farmer in fm.farmers) {
+        for (fruit in farmer.fruits) {
+            var sel = new market!Selection;
+
+            sel.name       = fruit.name;
+            sel.quality    = fruit.quality;
+            sel.price      = fruit.price;
+            sel.amount     = fruit.amount;
+            sel.farmer_id  = farmer.farmer_id;
+            //fruit.name.println();
+
+            m.selections.add(sel);
+        }
+    }
+}
+
+ 
+post {"Transformation finished".println();}
