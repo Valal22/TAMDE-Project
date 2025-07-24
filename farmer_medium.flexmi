@@ -1,0 +1,19 @@
+<?nsuri farm01?>
+<FarmModel>
+    <Farmer farmer_id="20" name="Boris"   age="39">
+        <Fruit name="apple"  amount="50" quality="B"        price="0.9"/>
+        <Fruit name="pear"   amount="22" quality="A"        price="1.1"/>
+        <Fruit name="peach"  amount="15" quality="Premium"  price="2.7"/>
+    </Farmer>
+
+    <Farmer farmer_id="21" name="Carla"   age="31">
+        <Fruit name="banana" amount="40" quality="A"        price="0.8"/>
+        <Fruit name="papaya" amount="9"  quality="Premium"  price="3.5"/>
+    </Farmer>
+
+    <Farmer farmer_id="22" name="Diego"   age="54">
+        <Fruit name="grape"  amount="90" quality="B"        price="1.4"/>
+        <Fruit name="fig"    amount="6"  quality="Premium"  price="4.0"/>
+        <Fruit name="kiwi"   amount="18" quality="A"        price="2.1"/>
+    </Farmer>
+</FarmModel>
