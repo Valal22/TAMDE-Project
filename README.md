@@ -131,4 +131,16 @@ Picto can be used to generate class diagrams from your `.ecore` metamodels. Here
 3.  **Generate Diagram**: Right-click on the `.picto` file and select `Picto > Generate diagram`. This will generate a PlantUML diagram of your metamodel.
 
 
-### 5. Slicing/semantic importance
+### 5. Slicing / Semantic Importance
+
+A **model slice** consists of selecting only the instances of *semantically important* meta‑classes. Slices help reason about transformations by isolating the pieces of information that matter for a given analysis.
+
+**How to create a slice**
+
+1. **Select important meta‑classes** in the *source* metamodel.
+2. **Project the instance model** onto those meta‑classes: keep all their instances and hide the rest, or render them with low opacity.
+3. **Repeat for different sizes** (small / medium / large) to show scalability.
+4. **Identify the corresponding elements in the *target* model**: for every source instance in the slice, collect the elements produced by the transformation.
+
+**Example – Case Study 1 (Farmers → Market)**
+Semantic importance is attached to the meta‑class `Farmer`. The three screenshots show slices of the small, medium, and large source models where only the `FarmModel` root and all `Farmer` instances are highlighted; `Fruit` instances are rendered with low opacity.
