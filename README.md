@@ -26,7 +26,7 @@ Two distinct metamodels are defined for this transformation, representing the so
 The transformation, defined in `farmer2market.etl`, reads an instance model conforming to `farmers.ecore` (i.e., a list of farmers and their fruits) and produces a new instance model conforming to `market.ecore`. The logic iterates through each farmer and each of their fruits, creating a corresponding `Selection` entry in the market model for every fruit.
 
 ### Sample models
-Three flexmi files are elaborated with three different sizes (small, medium, large) which are instance models conforming to `customer.ecore` file. A similar approach has been used for the other case studies. 
+Three flexmi files are elaborated with three different sizes (small, medium, large) which are instance models conforming to `farmers.ecore` file. A similar approach has been used for the other case studies. 
 
 ### Second Case Study: Customer to Data Warehouse Transformation 
 
@@ -163,7 +163,7 @@ Here, we define the transformation logic and configure the execution environment
 
 ### 4. Visualizing Metamodels with Picto
 
-Picto can be used to generate class diagrams from the `.ecore` metamodels. [Here](https://github.com/alfonsodelavega/picto-objectdiagram) you can go through the installation tutorial for picto (it should be read before continuing). 
+Picto can be used to generate class diagrams from the `.ecore` metamodels. [Here](https://github.com/alfonsodelavega/picto-objectdiagram) you can go through the installation tutorial for Picto. 
 
 1.  **Setup**:
     * Create a `picto` folder in the project.
@@ -186,12 +186,6 @@ Picto can be used to generate class diagrams from the `.ecore` metamodels. [Here
 ### 5. Slicing / Semantic Importance
 
 A **model slice** consists of selecting only the instances of *semantically important* meta‑classes. Slices help reason about transformations by isolating the pieces of information that matter for a given analysis.
-
-**How to create a slice**
-
-1. **Select important meta‑classes** in the *source* metamodel.
-2. **Project the instance model** onto those meta‑classes: keep all their instances and hide the rest, or render them with low opacity (as in this project).
-3. **Repeat for different sizes** (small / medium / large).
 
 **Example – Case Study 1 (Farmers to Market)**
 Semantic importance is attached to the meta‑class `Farmer`. The three screenshots show slices of the small, medium, and large source models where only the `FarmModel` root and all `Farmer` instances are highlighted; `Fruit` instances are rendered with low opacity.
