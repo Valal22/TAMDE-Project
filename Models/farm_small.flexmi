@@ -1,0 +1,7 @@
+<?nsuri farm01?>
+<FarmModel>
+    <Farmer farmer_id="10" name="Ada" age="27">
+        <Fruit name="strawberry" amount="12" quality="Premium" price="1.5"/>
+        <Fruit name="blueberry"  amount="8"  quality="A"       price="2.2"/>
+    </Farmer>
+</FarmModel>

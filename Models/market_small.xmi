@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<FarmModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="farm01" xmi:id="_7gQBQGbhEfCWU-mdnjBjMw">
+  <farmers xmi:id="_7gQBQWbhEfCWU-mdnjBjMw" farmer_id="10" name="Ada" age="27">
+    <fruits xmi:id="_7gQBQmbhEfCWU-mdnjBjMw" name="strawberry" amount="12" quality="Premium" price="1.5"/>
+    <fruits xmi:id="_7gQBQ2bhEfCWU-mdnjBjMw" name="blueberry" amount="8" quality="A" price="2.2"/>
+  </farmers>
+</FarmModel>
