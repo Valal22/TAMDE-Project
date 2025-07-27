@@ -161,8 +161,7 @@ Here, we define the transformation logic and configure the execution environment
 
 6.  **Run the Transformation**: Click `Apply` and then `Run`. The transformation will execute, and the new output `.xmi` file should appear in the `models` folder.
 
-7. Generating .model file:
-   * Click on xmi file and copy paste modiying the file into .model 
+7.  **Generate a `.model` file**: Copy-paste the newly generated `.xmi` file but this time change in `.model` (e.g. `market.model`) 
 
 ### 4. Visualizing Metamodels with Picto
 
