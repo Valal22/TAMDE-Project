@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<Vehicle xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="ve1" xsi:schemaLocation="ve1 ../metamodel/vehicle.ecore" brand="Ferrari" v_model="F8 Spider" year="2021" electric="false">
-  <powerUnit type="V8 Twin Turbo" output="710"/>
-  <wheels size="20.0" tireCategory="performance"/>
-  <features hasNavigation="true" hasABS="true" heatedSeats="false" sunroof="true"/>
-</Vehicle>
