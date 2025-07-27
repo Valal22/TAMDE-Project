@@ -1,6 +1,6 @@
 # Project: Theory and Applications of Model-Driven Engineering
 
-This project of Theory and Applications of Model-Driven Engineering (TAMDE) presents five case studies where the primary goal is to define source and target metamodels, create model instances, and execute model-to-model transformations using the Epsilon Transformation Language (ETL). The project also involves model slicing and visualization using Picto. This document provides a detailed explanation of the case studies and a generalized step-by-step tutorial for setting up the environment and running the transformations in Eclipse. adasdasdasd
+This project of Theory and Applications of Model-Driven Engineering (TAMDE) presents five case studies where the primary goal is to define source and target metamodels, create model instances, and execute model-to-model transformations using the Epsilon Transformation Language (ETL). The project also involves model slicing and visualization using Picto. This document provides a detailed explanation of the case studies and a generalized step-by-step tutorial for setting up the environment and running the transformations in Eclipse. 
 
 
 ## Case studies
