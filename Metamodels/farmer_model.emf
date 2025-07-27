@@ -1,1 +1,20 @@
+@namespace(uri="farm01", prefix="")
+package farm;
 
+class FarmModel {
+	val Farmer[*] farmers;
+}
+
+class Farmer {
+	attr Integer farmer_id;
+	attr String name;
+	attr Integer age;
+	val Fruit[*] fruits;
+}
+
+class Fruit {
+	attr String name;
+	attr Integer amount;
+	attr String quality;
+	attr Double price;
+}
