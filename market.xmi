@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<Market xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="market" xsi:schemaLocation="market ../metamodel/market_model.ecore">
-  <selections name="apple" quality="good" price="2.0" farmer_id="0" amount="5"/>
-  <selections name="peach" quality="excellent" price="3.0" farmer_id="0" amount="10"/>
-  <selections name="grape" quality="good" price="4.0" farmer_id="1" amount="30"/>
-</Market>
