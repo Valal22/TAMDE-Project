@@ -179,7 +179,7 @@ Picto can be used to generate class diagrams from the `.ecore` metamodels. [Here
     </picto>
     ```
     * Note: For `.model` files (e.g., `market.ecore.model`), you must use the specific configuration provided in the tutorial's `.model.picto` file instead of the snippet above. In particular:
-   ```
+   ```xml
     <?nsuri picto?>
    <picto format="plantuml" transformation="picto/model2plantuml/model2plantuml.egl">
    </picto>
