@@ -1,0 +1,51 @@
+@namespace(uri="car1", prefix="")
+package car;
+
+class CarArray {
+  val Car[*] cars; 
+}
+
+class Car {
+  attr String brand;
+  attr String c_model;
+  attr Integer year;
+  attr Boolean isElectric;
+
+  ref Engine engine;
+  ref WheelSystem wheels;
+  ref ElectricalSystem electricalSystem;
+  ref BrakingSystem brakingSystem;
+  ref Interior interior;
+  ref Exterior exterior;
+}
+
+class Engine {
+  attr String type;
+  attr Integer horsepower;
+}
+
+class WheelSystem {
+  attr Double wheelDiameter;         // inches, e.g., 17.0
+  attr String tireType;              // e.g., "all-season", "winter", "performance"
+  attr String material;              // e.g., "aluminum", "steel"
+}
+
+class ElectricalSystem {
+  attr Double batteryCapacity;
+  attr Boolean hasNavigation;
+}
+
+class BrakingSystem {
+  attr String type;
+  attr Boolean isABS;
+}
+
+class Interior {
+  attr String seatMaterial;
+  attr Boolean hasHeatedSeats;
+}
+
+class Exterior {
+  attr String color;
+  attr Boolean hasSunroof;
+}

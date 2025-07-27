@@ -1,0 +1,33 @@
+rule Car2Vehicle
+  transform c : car!Car
+  to v : vehicle!Vehicle {
+  
+    v.brand     = c.brand;
+    v.v_model   = c.c_model;
+    v.year      = c.year;
+    v.electric  = c.isElectric;
+
+    v.powerUnit = Engine2PowerUnit(c.engine);
+    v.wheels    = WheelSystem2WheelInfo(c.wheels);
+
+    var f = new vehicle!Features;
+    f.hasNavigation = c.electricalSystem.hasNavigation;
+    f.hasABS        = c.brakingSystem.isABS;
+    f.heatedSeats   = c.interior.hasHeatedSeats;
+    f.sunroof       = c.exterior.hasSunroof;
+    v.features = f;
+}
+
+operation Engine2PowerUnit(e : car!Engine) : vehicle!PowerUnit {
+  var p = new vehicle!PowerUnit;
+  p.type   = e.type;
+  p.output = e.horsepower;
+  return p;
+}
+
+operation WheelSystem2WheelInfo(w : car!WheelSystem) : vehicle!WheelInfo {
+  var wi = new vehicle!WheelInfo;
+  wi.size         = w.wheelDiameter;
+  wi.tireCategory = w.tireType;
+  return wi;
+}
