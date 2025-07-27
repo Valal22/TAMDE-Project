@@ -1,0 +1,44 @@
+<?nsuri cust01?>
+<CustomerModel>
+    <Customer customer_id="1" name="Alice" email="alice@example.com" age="28">
+        <Purchase product="Book"      quantity="1" price="12.99" date="2025-06-25"/>
+        <Purchase product="Pen"       quantity="3" price="1.50"  date="2025-06-27"/>
+        <Purchase product="Backpack"  quantity="1" price="39.90" date="2025-06-28"/>
+    </Customer>
+
+    <Customer customer_id="2" name="Bob" email="bob@example.com" age="35">
+        <Purchase product="Notebook"  quantity="2" price="4.00"  date="2025-06-26"/>
+        <Purchase product="Pencil"    quantity="10" price="0.50" date="2025-06-27"/>
+    </Customer>
+
+    <Customer customer_id="3" name="Carol" email="carol@example.com" age="41">
+        <Purchase product="Monitor"   quantity="1" price="199.99" date="2025-06-24"/>
+    </Customer>
+
+    <Customer customer_id="4" name="Dave" email="dave@example.com" age="22">
+        <Purchase product="Headphones"  quantity="1" price="59.99" date="2025-06-28"/>
+        <Purchase product="Mouse"       quantity="1" price="25.00" date="2025-06-29"/>
+        <Purchase product="USB-C Cable" quantity="2" price="9.99" date="2025-06-29"/>
+    </Customer>
+
+    <Customer customer_id="5" name="Eve" email="eve@example.com" age="30">
+        <Purchase product="Tablet"     quantity="1" price="299.00" date="2025-07-01"/>
+        <Purchase product="Stylus"     quantity="1" price="29.99"  date="2025-07-01"/>
+    </Customer>
+
+    <Customer customer_id="6" name="Frank" email="frank@example.com" age="38">
+        <Purchase product="Shoes"      quantity="1" price="89.95" date="2025-06-30"/>
+        <Purchase product="Socks"      quantity="5" price="3.00"  date="2025-06-30"/>
+    </Customer>
+
+    <Customer customer_id="7" name="Grace" email="grace@example.com" age="27">
+        <Purchase product="Smartphone" quantity="1" price="699.99" date="2025-06-22"/>
+        <Purchase product="Case"       quantity="1" price="19.99"  date="2025-06-23"/>
+        <Purchase product="Charger"    quantity="1" price="29.99"  date="2025-06-23"/>
+    </Customer>
+
+    <Customer customer_id="8" name="Henry" email="henry@example.com" age="45">
+        <Purchase product="Coffee Maker" quantity="1" price="89.00" date="2025-06-20"/>
+        <Purchase product="Coffee Beans" quantity="2" price="12.50" date="2025-06-21"/>
+    </Customer>
+</CustomerModel>
