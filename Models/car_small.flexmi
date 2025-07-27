@@ -1,0 +1,11 @@
+<?nsuri car1?>
+<CarArray>
+    <cars brand="Ferrari" c_model="F8 Spider" year="2021" isElectric="false">
+        <engine type="V8 Twin Turbo" horsepower="710" />
+        <wheels wheelDiameter="20.0" tireType="performance" material="aluminum" />
+        <electricalSystem batteryCapacity="0.08" hasNavigation="true" />
+        <brakingSystem type="carbon-ceramic" isABS="true" />
+        <interior seatMaterial="leather" hasHeatedSeats="false" />
+        <exterior color="Rosso Corsa" hasSunroof="true" />
+    </cars>
+</CarArray>

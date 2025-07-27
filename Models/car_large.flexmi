@@ -1,0 +1,74 @@
+<?nsuri car1?>
+<CarArray>
+    <cars brand="Alfa Romeo" c_model="Giulia" year="2022" isElectric="false">
+        <engine type="2.0 Turbocharged I4" horsepower="280" />
+        <wheels wheelDiameter="18.0" tireType="performance" material="aluminum" />
+        <electricalSystem batteryCapacity="0.08" hasNavigation="true" />
+        <brakingSystem type="disc" isABS="true" />
+        <interior seatMaterial="leather" hasHeatedSeats="true" />
+        <exterior color="Alfa White" hasSunroof="true" />
+    </cars>
+
+    <cars brand="Fiat" c_model="124 Spider" year="2018" isElectric="false">
+        <engine type="1.4L MultiAir Turbo" horsepower="160" />
+        <wheels wheelDiameter="17.0" tireType="summer" material="aluminum" />
+        <electricalSystem batteryCapacity="0.06" hasNavigation="true" />
+        <brakingSystem type="disc" isABS="true" />
+        <interior seatMaterial="leather" hasHeatedSeats="true" />
+        <exterior color="Red" hasSunroof="false" />
+    </cars>
+
+    <cars brand="Ferrari" c_model="SF-23" year="2023" isElectric="false">
+        <engine type="1.6L Hybrid V6 Turbo" horsepower="1050" />
+        <wheels wheelDiameter="18.0" tireType="slick racing" material="carbon" />
+        <electricalSystem batteryCapacity="4.0" hasNavigation="false" />
+        <brakingSystem type="carbon-carbon" isABS="false" />
+        <interior seatMaterial="carbon fiber" hasHeatedSeats="false" />
+        <exterior color="Scuderia Red" hasSunroof="false" />
+    </cars>
+
+    <cars brand="Mazda" c_model="MX-5 Miata" year="2022" isElectric="false">
+        <engine type="2.0L Skyactiv-G" horsepower="181" />
+        <wheels wheelDiameter="17.0" tireType="performance" material="aluminum" />
+        <electricalSystem batteryCapacity="0.07" hasNavigation="true" />
+        <brakingSystem type="disc" isABS="true" />
+        <interior seatMaterial="leather" hasHeatedSeats="true" />
+        <exterior color="Soul Red Crystal" hasSunroof="false" />
+    </cars>
+
+    <cars brand="Fiat" c_model="500L" year="2021" isElectric="false">
+        <engine type="1.4L I4" horsepower="160" />
+        <wheels wheelDiameter="17.0" tireType="all-season" material="steel" />
+        <electricalSystem batteryCapacity="0.06" hasNavigation="true" />
+        <brakingSystem type="disc" isABS="true" />
+        <interior seatMaterial="fabric" hasHeatedSeats="false" />
+        <exterior color="White" hasSunroof="true" />
+    </cars>
+
+    <cars brand="Bugatti" c_model="Bolide" year="2024" isElectric="false">
+        <engine type="8.0L W16 Quad-Turbo" horsepower="1578" />
+        <wheels wheelDiameter="18.0" tireType="racing" material="magnesium" />
+        <electricalSystem batteryCapacity="1.0" hasNavigation="false" />
+        <brakingSystem type="carbon-ceramic" isABS="true" />
+        <interior seatMaterial="carbon fiber" hasHeatedSeats="false" />
+        <exterior color="Blue Carbon" hasSunroof="false" />
+    </cars>
+
+    <cars brand="Nissan" c_model="Skyline GT-R R34" year="1999" isElectric="false">
+        <engine type="RB26DETT 2.6L Twin-Turbo I6" horsepower="280" />
+        <wheels wheelDiameter="18.0" tireType="performance" material="aluminum" />
+        <electricalSystem batteryCapacity="0.07" hasNavigation="true" />
+        <brakingSystem type="Brembo disc" isABS="true" />
+        <interior seatMaterial="suede" hasHeatedSeats="false" />
+        <exterior color="Bayside Blue" hasSunroof="false" />
+    </cars>
+
+    <cars brand="Renault" c_model="Zoe" year="2022" isElectric="true">
+        <engine type="Electric Motor" horsepower="135" />
+        <wheels wheelDiameter="16.0" tireType="all-season" material="aluminum" />
+        <electricalSystem batteryCapacity="52.0" hasNavigation="true" />
+        <brakingSystem type="regenerative + disc" isABS="true" />
+        <interior seatMaterial="eco fabric" hasHeatedSeats="true" />
+        <exterior color="Crystal White" hasSunroof="false" />
+    </cars>
+</CarArray>
