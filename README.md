@@ -1,6 +1,6 @@
 # Project: Theory and Applications of Model-Driven Engineering
 
-This project of Theory and Applications of Model-Driven Engineering (TAMDE) presents five case studies where the primary goal is to define source and target metamodels, create model instances, and execute model-to-model transformations using the Epsilon Transformation Language (ETL). The project also involves model slicing and visualization using Picto. This document provides a detailed explanation of the case studies and a generalized step-by-step tutorial for setting up the environment and running the transformations in Eclipse. 
+This project of Theory and Applications of Model-Driven Engineering (TAMDE) presents five case studies where the primary goal is to define source and target metamodels, create model instances, and execute model-to-model transformations using the Epsilon Transformation Language (ETL). The project then involves model slicing and visualization using Picto. This document provides a detailed explanation of the case studies and a generalized step-by-step tutorial for setting up the environment and running the transformations in Eclipse. 
 
 
 ## Case studies
@@ -26,7 +26,7 @@ Two distinct metamodels are defined for this transformation, representing the so
 The transformation, defined in `farmer2market.etl`, reads an instance model conforming to `farmers.ecore` (i.e., a list of farmers and their fruits) and produces a new instance model conforming to `market.ecore`. The logic iterates through each farmer and each of their fruits, creating a corresponding `Selection` entry in the market model for every fruit.
 
 ### Sample models
-Three flexmi files were elaborated with three different sizes (small, medium, large) which are instance models conforming to `customer.ecore` file. A similar approach has been used for the other case studies. 
+Three flexmi files are elaborated with three different sizes (small, medium, large) which are instance models conforming to `customer.ecore` file. A similar approach has been used for the other case studies. 
 
 ### Second Case Study: Customer to Data Warehouse Transformation 
 
@@ -34,7 +34,7 @@ This case study focuses on transforming a transactional model of customer purcha
 
 #### The Metamodels
 
-Two distinct metamodels are defined, representing the raw transactional data and the summarized data.
+Two distinct metamodels are defined, representing the transactional data and the summarized data.
 
 * **Source Metamodel (A): `customer.ecore`**. This metamodel captures information about individual customers and their specific purchase histories.
     * `CustomerModel`: The root container for all customers.
@@ -165,7 +165,7 @@ Here, we define the transformation logic and configure the execution environment
 
 ### 4. Visualizing Metamodels with Picto
 
-Picto can be used to generate class diagrams from the `.ecore` metamodels. Here you can go through the installation tutorial for picto (it should be read before continuing). 
+Picto can be used to generate class diagrams from the `.ecore` metamodels. [Here](https://github.com/alfonsodelavega/picto-objectdiagram) you can go through the installation tutorial for picto (it should be read before continuing). 
 
 1.  **Setup**:
     * Create a `picto` folder in the project.
@@ -178,9 +178,12 @@ Picto can be used to generate class diagrams from the `.ecore` metamodels. Here 
     <picto format="plantuml" transformation="picto/ecore2plantuml/ecore2plantuml.egl">
     </picto>
     ```
-    * Note: For `.model` files (e.g., `market.ecore.model`), you must use the special configuration provided in the tutorial's `.model.picto` file instead of the snippet above.
-3.  **Generate Diagram**: Right-click on the `.picto` file and select `Picto > Generate diagram`. This will generate a PlantUML diagram of the metamodel.
-
+    * Note: For `.model` files (e.g., `market.ecore.model`), you must use the specific configuration provided in the tutorial's `.model.picto` file instead of the snippet above. In particular:
+   ```
+    <?nsuri picto?>
+   <picto format="plantuml" transformation="picto/model2plantuml/model2plantuml.egl">
+   </picto>
+   ```
 
 ### 5. Slicing / Semantic Importance
 
@@ -189,9 +192,8 @@ A **model slice** consists of selecting only the instances of *semantically impo
 **How to create a slice**
 
 1. **Select important meta‑classes** in the *source* metamodel.
-2. **Project the instance model** onto those meta‑classes: keep all their instances and hide the rest, or render them with low opacity.
-3. **Repeat for different sizes** (small / medium / large) to show scalability.
-4. **Identify the corresponding elements in the *target* model**: for every source instance in the slice, collect the elements produced by the transformation.
+2. **Project the instance model** onto those meta‑classes: keep all their instances and hide the rest, or render them with low opacity (as in this project).
+3. **Repeat for different sizes** (small / medium / large).
 
-**Example – Case Study 1 (Farmers → Market)**
+**Example – Case Study 1 (Farmers to Market)**
 Semantic importance is attached to the meta‑class `Farmer`. The three screenshots show slices of the small, medium, and large source models where only the `FarmModel` root and all `Farmer` instances are highlighted; `Fruit` instances are rendered with low opacity.
