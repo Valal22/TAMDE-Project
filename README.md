@@ -3,7 +3,7 @@
 This project of Theory and Applications of Model-Driven Engineering (TAMDE) presents five case studies where the primary goal is to define source and target metamodels, create model instances, and execute model-to-model (M2M) transformations using the Epsilon Transformation Language (ETL). The project also involves model slicing and visualization using Picto. This document provides a detailed explanation the case studies and a generalized step-by-step tutorial for setting up the environment and running the transformations in Eclipse.
 
 
-# Case studies
+## Case studies
 ### First Case Study: Farmers to Market Transformation 
 
 This case study focuses on transforming a detailed model of farmers and their produce into a simplified model representing products available at a market.
@@ -25,8 +25,10 @@ Two distinct metamodels are defined for this transformation, representing the so
 
 The transformation, defined in `farmer2market.etl`, reads an instance model conforming to `farmers.ecore` (i.e., a list of farmers and their fruits) and produces a new instance model conforming to `market.ecore`. The logic iterates through each farmer and each of their fruits, creating a corresponding `Selection` entry in the market model for every fruit.
 
+### Sample models
+Three flexmi files were elaborated with three different sizes (small, medium, large) which are instance models conforming to `customer.ecore` file. A similar approach has been used for the other case studies. 
 
-### Second Case Study: Customer to Data Warehouse Transformation 📈
+### Second Case Study: Customer to Data Warehouse Transformation 
 
 This case study focuses on transforming a transactional model of customer purchases into an aggregated, analytical model suitable for a data warehouse.
 
@@ -46,6 +48,53 @@ Two distinct metamodels are defined, representing the raw transactional data and
 #### Transformation Goal
 
 The transformation, defined in `customer2warehouse.etl`, reads an instance model conforming to `customer.ecore` and produces a new instance model conforming to `warehouse.ecore`. The logic iterates through each customer and aggregates their purchase history by calculating the total money spent, counting the number of orders, and identifying the most recent purchase date. This creates a concise, analytical summary for each customer.
+
+### Third Case Study: Car to Vehicle Transformation 
+
+This case study translates a car components description into a **vehicle** representation.
+
+#### The Metamodels
+
+* **Source Metamodel (A) `car.ecore`** it's a description of car components.
+
+  * `CarArray`: root container.
+  * `Car`: `brand`, `c_model`, `year`, `isElectric` + references:
+
+    * `Engine(type, horsepower)`
+    * `WheelSystem(wheelDiameter, tireType, material)`
+    * `ElectricalSystem(batteryCapacity, hasNavigation)`
+    * `BrakingSystem(type, isABS)`
+    * `Interior(seatMaterial, hasHeatedSeats)`
+    * `Exterior(color, hasSunroof)`
+
+* **Target Metamodel (B): `vehicle.ecore`** – normalized, analysis‑ready view.
+
+  * `VehicleArray`: root container.
+  * `Vehicle`: `brand`, `v_model`, `year`, `electric` + references:
+
+    * `PowerUnit(type, output)`
+    * `WheelInfo(size, tireCategory)`
+    * `Features(hasNavigation, hasABS, heatedSeats, sunroof)`
+
+#### Transformation goal
+
+For each `Car` in `CarArray`, create one `Vehicle` in `VehicleArray`:
+
+| Source (car.ecore)                     | Target (vehicle.ecore)          | Notes                                             |
+| -------------------------------------- | ------------------------------- | ------------------------------------------------- |
+| `Car.brand`                            | `Vehicle.brand`                 | copy                                              |
+| `Car.c_model`                          | `Vehicle.v_model`               | rename                                            |
+| `Car.year`                             | `Vehicle.year`                  | copy                                              |
+| `Car.isElectric`                       | `Vehicle.electric`              | copy                                              |
+| `Engine(type, horsepower)`             | `PowerUnit(type, output)`       | `output ← horsepower`                             |
+| `WheelSystem(wheelDiameter, tireType)` | `WheelInfo(size, tireCategory)` | `size ← wheelDiameter`, `tireCategory ← tireType` |
+| `ElectricalSystem.hasNavigation`       | `Features.hasNavigation`        | aggregated into one object                        |
+| `BrakingSystem.isABS`                  | `Features.hasABS`               |                                                   |
+| `Interior.hasHeatedSeats`              | `Features.heatedSeats`          |                                                   |
+| `Exterior.hasSunroof`                  | `Features.sunroof`              |                                                   |
+
+
+
 
 ## Step-by-Step MDE Tutorial 
 
