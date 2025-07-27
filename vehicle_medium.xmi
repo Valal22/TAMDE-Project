@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="ve1" xsi:schemaLocation="ve1 ../metamodel/vehicle.ecore">
+  <Vehicle brand="Alfa Romeo" v_model="MiTo" year="2016" electric="false">
+    <powerUnit type="1.4 Turbo MultiAir" output="140"/>
+    <wheels size="17.0" tireCategory="all-season"/>
+    <features hasNavigation="true" hasABS="true" heatedSeats="false" sunroof="false"/>
+  </Vehicle>
+  <Vehicle brand="Alfa Romeo" v_model="Giulietta" year="2018" electric="false">
+    <powerUnit type="1.6 JTDM Diesel" output="120"/>
+    <wheels size="17.0" tireCategory="all-season"/>
+    <features hasNavigation="true" hasABS="true" heatedSeats="true" sunroof="true"/>
+  </Vehicle>
+  <Vehicle brand="Alfa Romeo" v_model="Tonale" year="2023" electric="false">
+    <powerUnit type="PHEV 1.3 Turbo + Electric" output="280"/>
+    <wheels size="18.0" tireCategory="performance"/>
+    <features hasNavigation="true" hasABS="true" heatedSeats="true" sunroof="true"/>
+  </Vehicle>
+</xmi:XMI>
