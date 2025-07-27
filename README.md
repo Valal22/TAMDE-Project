@@ -96,9 +96,9 @@ For each `Car` in `CarArray`, create one `Vehicle` in `VehicleArray`:
 
 
 
-## Step-by-Step MDE Tutorial 
+## Step-by-Step Tutorial 
 
-Below is the workflow for creating metamodels, instance models, and running transformations using Eclipse and the Epsilon platform.
+Below is the workflow for creating metamodels, instance models, and running transformations using Eclipse platform.
 
 ### 1. Project and Metamodel Setup
 
@@ -108,11 +108,11 @@ First, we'll set up the project structure and define the source and target metam
 2.  **Create Metamodel Folder**: Inside the new project, create a folder named `metamodel`.
 3.  **Define Metamodels with Emfatic**:
     * Inside the `metamodel` folder, create two new files with the `.emf` extension (e.g., `farmers.emf` and `market.emf`).
-    * Write the metamodel definitions in these files. Ensure the `@namespace` URI is unique for each metamodel.
-4.  **Generate Ecore Metamodels**:
+    * Write the metamodel definitions and codes in these files. Ensure the `@namespace` URI is unique for each metamodel.
+4.  **Register and generate Ecore Metamodels**:
     * Right-click on each `.emf` file.
-    * Select `Epsilon > Generate Ecore from Emfatic`. This will create the corresponding `.ecore` files (e.g., `farmers.ecore`, `market.ecore`), which are the standard format for EMF metamodels.
-5.  **Validate Metamodels**: Right-click on each generated `.ecore` file and select `Validate`. This checks for any errors in the metamodel structure.
+    * First click `register Epackages` and then `Generate Ecore`. This will create the corresponding `.ecore` files (e.g., `farmers.ecore`, `market.ecore`).
+5.  **Validate Metamodels**: Right-click on each generated `.ecore` file and select `Validate`.
 
 ### 2. Creating an Instance Model
 
@@ -120,8 +120,8 @@ Now, we create a concrete data model (an instance) that conforms to our source m
 
 1.  **Create Models Folder**: Create a new folder named `models` in the project root.
 2.  **Define Model with Flexmi**:
-    * Inside the `models` folder, create a new file with the `.flexmi` extension (e.g., `farmers_large.flexmi`). Flexmi is a user-friendly XML-based syntax for creating model instances.
-    * Write the instance data in this file. Remember to reference the correct namespace URI from the source metamodel (e.g., `<?nsuri farm01?>`).
+    * Inside the `models` folder, create a new file with the `.flexmi` extension (e.g., `farmers_large.flexmi`).
+    * Write the code in this file and remember to reference the correct namespace URI from the source metamodel (e.g., `<?nsuri farm01?>`).
 3.  **Generate XMI Model**:
     * Right-click on the `.flexmi` file.
     * Select `Generate XMI Model`. This will create an `.xmi` file (e.g., `farmers_large.xmi`), which is the instance model that the transformation engine will read.
@@ -137,12 +137,10 @@ Here, we define the transformation logic and configure the execution environment
 3.  **Set Up Run Configuration**:
 
     * Go to `Run > Run Configurations...`.
-    * Right-click on `ETL Transformation` and select `New Configuration`.
-    * In the `ETL file` field, browse to the `.etl` file.
+    * Click on the `.etl` extension (e.g., `farmer2market.etl`).
     * Go to the **Models** tab to configure the input and output.
 
 4.  **Configure Source Model (Input)**:
-
     * Click `Add`.
     * **Name** and **Aliases**: Give it a name that matches the alias used in the `.etl` file (e.g., `farmers`).
     * **Model type**: Select `EMF Model`.
@@ -197,3 +195,6 @@ A **model slice** consists of selecting only the instances of *semantically impo
 
 **Example – Case Study 1 (Farmers to Market)**
 Semantic importance is attached to the meta‑class `Farmer`. The three screenshots show slices of the small, medium, and large source models where only the `FarmModel` root and all `Farmer` instances are highlighted; `Fruit` instances are rendered with low opacity.
+
+## Relevant references
+[Integrating semantic reasoning in information loss-based transformation chain rankers](https://www.researchgate.net/publication/351150691_Integrating_semantic_reasoning_in_information_loss-based_transformation_chain_rankers)
